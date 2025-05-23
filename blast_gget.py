@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 from gget import blast
 import json
-
-
-# In[2]:
-
 
 def collect_fasta_files(root="fasta_output"):
     """
