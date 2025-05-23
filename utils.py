@@ -1,19 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import requests
 import pandas as pd
 from collections import defaultdict
 import os
 from datetime import datetime, timedelta
 from rapidfuzz import process
-
-
-# In[2]:
-
 
 def fetch_kegg_orthology(ko_id):
     '''
@@ -55,10 +45,6 @@ def fetch_kegg_orthology(ko_id):
 
     return content
 
-
-# In[3]:
-
-
 def fetch_gene_entry(kegg_gene_id):
     '''
     Fetch a full KEGG gene entry using species:gene format.
@@ -95,10 +81,6 @@ def fetch_gene_entry(kegg_gene_id):
         raise ValueError(f"❌ Entry for {kegg_gene_id} is malformed or incomplete.")
 
     return content
-
-
-# In[4]:
-
 
 def parse_gene_table(entry_text):
     '''
@@ -140,10 +122,6 @@ def parse_gene_table(entry_text):
 
     return pd.DataFrame(data)
 
-
-# In[5]:
-
-
 def save_gene_table_as_csv(df, filename="kegg_gene_table.csv"):
     '''
     Save parsed KEGG gene table to a CSV file.
@@ -171,11 +149,7 @@ def save_gene_table_as_csv(df, filename="kegg_gene_table.csv"):
         print(f"✅ Gene table saved to: {filename}")
     except OSError as e:
         raise OSError(f"❌ Failed to save CSV: {e}")
-
-
-# In[6]:
-
-
+        
 # 📁 Config
 SPECIES_CSV = "species_cache.csv"
 META_FILE = "species_cache_meta.txt"
@@ -244,10 +218,6 @@ def update_species_list(species_csv=SPECIES_CSV, meta_file=META_FILE):
 
     return df_species
 
-
-# In[7]:
-
-
 def is_cache_stale(species_csv="species_cache.csv", meta_file="species_cache_meta.txt", interval_days=7):
     """
     Determine whether the species cache is stale or missing.
@@ -278,10 +248,6 @@ def is_cache_stale(species_csv="species_cache.csv", meta_file="species_cache_met
         print(f"⚠️ Error reading metadata: {e}")
         return True
 
-
-# In[8]:
-
-
 def load_species_data(species_csv="species_cache.csv", meta_file="species_cache_meta.txt", interval_days=7):
     """
     Load the species DataFrame from cache, or update it if stale.
@@ -308,10 +274,6 @@ def load_species_data(species_csv="species_cache.csv", meta_file="species_cache_
             return df
     except Exception as e:
         raise OSError(f"❌ Failed to load species data: {e}")
-
-
-# In[9]:
-
 
 def map_species_from_single_input(species_df, gene_df):
     """
@@ -395,10 +357,6 @@ def map_species_from_single_input(species_df, gene_df):
 
     return matched_name, species_id, gene_list
 
-
-# In[10]:
-
-
 def map_species_from_csv(csv_path, species_df, gene_df, output_file="species_id_and_genes.csv"):
     """
     Match species in a CSV to KEGG IDs and extract genes.
@@ -465,4 +423,3 @@ def map_species_from_csv(csv_path, species_df, gene_df, output_file="species_id_
 
     print(f"\n✅ CSV match and gene extraction complete! Output saved to: {output_file}")
     return df_input
-
