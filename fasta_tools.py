@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import os
 import requests
-
-
-# In[2]:
-
 
 def extract_genes_for_species(gene_df, species_id, verbose=False):
     """
@@ -49,10 +39,6 @@ def extract_genes_for_species(gene_df, species_id, verbose=False):
 
     return gene_list
 
-
-# In[3]:
-
-
 def extract_sequence(entry_text, key="AASEQ"):
     """
     Extract amino acid or nucleotide sequence from KEGG entry.
@@ -85,10 +71,6 @@ def extract_sequence(entry_text, key="AASEQ"):
         return sequence
     return None
 
-
-# In[4]:
-
-
 def write_fasta_file(path, header, sequence):
     """
     Write a sequence to a FASTA file with proper wrapping.
@@ -120,4 +102,3 @@ def write_fasta_file(path, header, sequence):
         print(f"✅ FASTA saved: {path}")
     except Exception as e:
         raise OSError(f"❌ Could not write FASTA file: {e}")
-
