@@ -1,16 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import os
 import time
 import requests
-
-
-# In[2]:
-
 
 def parse_ncbi_blast_text(text):
     """
@@ -35,10 +25,6 @@ def parse_ncbi_blast_text(text):
         hits.append(current)
 
     return hits
-
-
-# In[3]:
-
 
 def run_ncbi_blast_all(program="blastp", database="nr", tax_query=None, fasta_dir="fasta_output", output_dir="blast_results_ncbi"):
     """
