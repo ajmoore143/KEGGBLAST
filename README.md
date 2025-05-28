@@ -15,46 +15,46 @@ KEGGBLAST is a Python toolkit for:
 Clone or unzip the project, then from the outer `keggblast/` folder:
 
 '''bash
-pip install .
+pip install
 
 ## Quick Example
 
 '''python
 from keggblast.utils import fetch_kegg_orthology, parse_gene_table<br>
-from keggblast.fasta_tools import fetch_gene_entry, extract_sequence
+from keggblast.fasta_tools import fetch_gene_entry, extract_sequence<br>
 
 # Fetch KO entry
-ko_entry = fetch_kegg_orthology("K09252")
+ko_entry = fetch_kegg_orthology("K09252")<br>
 
 # Parse gene table from entry
-gene_df = parse_gene_table(ko_entry)
+gene_df = parse_gene_table(ko_entry)<br>
 
 # Get gene sequence
-entry = fetch_gene_entry("ncr:NCU09026")
-aa = extract_sequence(entry, "AASEQ")
-nt = extract_sequence(entry, "NTSEQ")
+entry = fetch_gene_entry("ncr:NCU09026")<br>
+aa = extract_sequence(entry, "AASEQ")<br>
+nt = extract_sequence(entry, "NTSEQ")<br>
 
 # Run BLAST (via gget or NCBI)
-from keggblast.blast_gget import run_gget_blast_all
-run_gget_blast_all(program="blastp", database="nr")
+from keggblast.blast_gget import run_gget_blast_all<br>
+run_gget_blast_all(program="blastp", database="nr")<br>
 
-from keggblast.blast_ncbi import run_ncbi_blast_all
-run_ncbi_blast_all(program="blastn", database="nt", tax_query="txid9606[ORGN]")
+from keggblast.blast_ncbi import run_ncbi_blast_all<br>
+run_ncbi_blast_all(program="blastn", database="nt", tax_query="txid9606[ORGN]")<br>
 
 ## Output Structure
-FASTA saved under:
+FASTA saved under:<br>
 
-fasta_output/{species_id}/GENE_amino.fasta
-fasta_output/{species_id}/GENE_gene.fasta
+fasta_output/{species_id}/GENE_amino.fasta<br>
+fasta_output/{species_id}/GENE_gene.fasta<br>
 
-BLAST results saved to:
+BLAST results saved to:<br>
 
-blast_results_gget/
-blast_results_ncbi/
+blast_results_gget/<br>
+blast_results_ncbi/<br>
 
 ## Species Matching
-Auto-fuzzy matches species names and IDs (e.g. "hamo sapiens" → "homo sapiens" → hsa). You can run on single species or upload CSV files of multiple species.
+Auto-fuzzy matches species names and IDs (e.g. "hamo sapiens" → "homo sapiens" → hsa). You can run on single species or upload CSV files of multiple species.<br>
 
 ## Author
-Developed by Alex Moore
+Developed by Alex Moore<br>
 Mentored by Brady Hislop 
