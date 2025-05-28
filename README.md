@@ -20,7 +20,7 @@ pip install .
 ## Quick Example
 
 '''python
-from keggblast.utils import fetch_kegg_orthology, parse_gene_table
+from keggblast.utils import fetch_kegg_orthology, parse_gene_table<br>
 from keggblast.fasta_tools import fetch_gene_entry, extract_sequence
 
 # Fetch KO entry
