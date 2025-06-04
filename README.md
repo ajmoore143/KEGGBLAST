@@ -101,7 +101,7 @@ Input: "hamo sapiens"
 → KEGG ID: hsa
 ```
 ## Author
-Developed by Alex Moore
+Developed by Alex Moore /n
 Mentored by Brady Hislop
 
 
