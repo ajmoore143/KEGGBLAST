@@ -69,6 +69,21 @@ def run_full_pipeline_single(
         seq = read_fasta_sequence(fasta)
         run_ncbi_blast(seq, blast_program, blast_database, name, tax_query=taxonomy_filter)
 
+    
+    #5. Parsing JSON into a csv file
+    from keggblast.blast_utils import blast_json_to_df
+
+    print("\nParsing BLAST results into tables...")
+
+    blast_dir = "blast_results_ncbi"
+    for file in os.listdir(blast_dir):
+        if file.endswith(".json"):
+            path = os.path.join(blast_dir, file)
+            df = blast_json_to_df(path)
+            out_csv = path.replace(".json", ".csv")
+            df.to_csv(out_csv, index=False)
+            print(f"✅ Parsed table saved to: {out_csv}")
+
     print("All steps complete.")
 
 
@@ -137,6 +152,20 @@ def run_full_pipeline_csv(
         gene = os.path.basename(fasta).replace(".fasta", "")
         seq = read_fasta_sequence(fasta)
         run_ncbi_blast(seq, blast_program, blast_database, gene, tax_query=taxonomy_filter)
+
+    #4. Parsing JSON into a csv file
+    from keggblast.blast_utils import blast_json_to_df
+
+    print("\nParsing BLAST results into tables...")
+
+    blast_dir = "blast_results_ncbi"
+    for file in os.listdir(blast_dir):
+        if file.endswith(".json"):
+            path = os.path.join(blast_dir, file)
+            df = blast_json_to_df(path)
+            out_csv = path.replace(".json", ".csv")
+            df.to_csv(out_csv, index=False)
+            print(f"✅ Parsed table saved to: {out_csv}")
 
     print("All steps complete.")
 
