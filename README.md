@@ -89,7 +89,7 @@ Writes ``.fasta`` files into folders named after species KEGG ID
 | Tool     | Interface  | Format     | Taxonomic Filtering      |
 | -------- | ---------- | ---------- | ------------------------ |
 | gget     | Python API | JSON       | ❌ No                     |
-| NCBI API | HTTP POST  | XML / Text | ✅ Yes (`txidXXXX[ORGN]`) |
+| NCBI API | HTTP POST  | JSON       | ✅ Yes (`txidXXXX[ORGN]`) |
 
 
 ## Auto Species Matching
