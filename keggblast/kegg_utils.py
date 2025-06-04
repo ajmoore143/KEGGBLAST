@@ -400,7 +400,7 @@ def map_species_from_csv(csv_path, species_df, gene_df, output_file="species_id_
                 filtered_df = gene_df[gene_df['Species ID'].str.lower() == matched_id.lower()]
                 if not filtered_df.empty:
                     gene_str = filtered_df.iloc[0]['Genes']
-                    raw_genes = gene_str.split(',')
+                    raw_genes = gene_str.split(' ')
                     genes = [g.strip().split()[-1] for g in raw_genes]
                 else:
                     genes = []
