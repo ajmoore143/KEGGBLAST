@@ -61,3 +61,27 @@ run_ncbi_blast_all(
     tax_query="txid4751[ORGN]"  # Fungi taxid
 )
 ```
+
+## 📂 Output Structure
+```bash
+📁 fasta_output/
+   └── hsa/
+       ├── GENE1_amino.fasta
+       ├── GENE1_gene.fasta
+       └── GENE2_amino.fasta
+
+📁 blast_results_gget/
+   ├── GENE1_blastp_blast.json
+
+📁 blast_results_ncbi/
+   ├── GENE1_ncbi_blast.xml
+```
+
+## 🧬 FASTA Extraction Logic
+For each KO gene found in a matched species:
+
+Downloads both ``AASEQ`` and ``NTSEQ`` blocks
+
+Writes ``.fasta`` files into folders named after species KEGG ID
+
+
