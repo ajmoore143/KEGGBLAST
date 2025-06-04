@@ -84,4 +84,24 @@ Downloads both ``AASEQ`` and ``NTSEQ`` blocks
 
 Writes ``.fasta`` files into folders named after species KEGG ID
 
+## BLAST Support
+
+| Tool     | Interface  | Format     | Taxonomic Filtering      |
+| -------- | ---------- | ---------- | ------------------------ |
+| gget     | Python API | JSON       | ❌ No                     |
+| NCBI API | HTTP POST  | XML / Text | ✅ Yes (`txidXXXX[ORGN]`) |
+
+
+## Auto Species Matching
+Handles typos or fuzzy names. For example:
+
+```text
+Input: "hamo sapiens"
+→ Match: "homo sapiens"
+→ KEGG ID: hsa
+```
+## Author
+Developed by Alex Moore
+Mentored by Brady Hislop
+
 
