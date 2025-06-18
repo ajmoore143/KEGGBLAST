@@ -3,7 +3,7 @@
 from .kegg_utils import *
 from .fasta_tools import *
 from .json_tools import *
-from .run_all import *
+from .run_full import *
 from .blast_gget import *
 from .blast_ncbi import *
 
