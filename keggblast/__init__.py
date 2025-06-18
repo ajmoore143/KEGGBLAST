@@ -4,6 +4,7 @@
 from .kegg_utils import *
 
 # FASTA helpers
+from .kegg_utils import *
 from .fasta_tools import *
 
 # BLAST backends
