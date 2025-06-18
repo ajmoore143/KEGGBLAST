@@ -1,5 +1,6 @@
 from gget import blast
 import json
+import os
 
 def collect_fasta_files(root="fasta_output"):
     """

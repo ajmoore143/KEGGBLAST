@@ -22,10 +22,12 @@ pip install .
 ```python
 
 # 1. === Import tools ===
-from keggblast.utils import (
+from keggblast.kegg_utils import (
     fetch_kegg_orthology, parse_gene_table, load_species_data,
-    map_species_from_single_input, extract_genes_for_species,
-    fetch_gene_entry, extract_sequence, write_fasta_file
+    map_species_from_single_input, fetch_gene_entry
+)
+from keggblast.fasta_tools import (
+    extract_genes_for_species, extract_sequence, write_fasta_file
 )
 from keggblast.blast_gget import run_gget_blast_all
 from keggblast.blast_ncbi import run_ncbi_blast_all
