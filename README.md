@@ -74,7 +74,7 @@ run_ncbi_blast_all(
    ├── GENE1_blastp_blast.json
 
 📁 blast_results_ncbi/
-   ├── GENE1_ncbi_blast.xml
+   ├── GENE1_ncbi_blast.json
 ```
 
 ## 🧬 FASTA Extraction Logic
