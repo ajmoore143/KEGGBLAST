@@ -1,6 +1,9 @@
 import os
 import time
+import json
 import requests
+
+from .blast_gget import collect_fasta_files, read_fasta_sequence
 
 def parse_ncbi_blast_text(text):
     """

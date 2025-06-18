@@ -289,6 +289,8 @@ def map_species_from_single_input(species_df, gene_df):
     """
     latin_common_names = []
     species_ids = []
+    species_id = None
+    matched_name = None
 
     for _, row in species_df.iterrows():
         if isinstance(row['Species Name'], str):
