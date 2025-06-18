@@ -1,3 +1,7 @@
+import json
+import pandas as pd
+
+
 def blast_json_to_table(json_file):
     '''
     Convert BLAST JSON output (from gget or NCBI if json formatted) to a pandas DataFrame.

@@ -1,14 +1,14 @@
 import os
-from keggblast.utils import (
-        fetch_kegg_orthology,
-        parse_gene_table,
-        load_species_data,
-        map_species_from_single_input,
-        fetch_gene_entry,
-        extract_sequence,
-        write_fasta_file
-    )
-from keggblast.blast_ncbi import run_ncbi_blast
+from keggblast.kegg_utils import (
+    fetch_kegg_orthology,
+    parse_gene_table,
+    load_species_data,
+    map_species_from_single_input,
+    map_species_from_csv,
+    fetch_gene_entry,
+)
+from keggblast.fasta_tools import extract_sequence, write_fasta_file
+from keggblast.blast_ncbi import run_ncbi_blast_all
 from keggblast.json_tools import parse_json_blast_to_table
 
 def run_full_pipeline_single(
